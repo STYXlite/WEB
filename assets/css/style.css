@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  width: calc(100% - 120px);
+  margin-inline: auto;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+body {
+  background-image: url(https://cdn.pixabay.com/photo/2022/02/15/05/31/school-background-7014275_1280.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Be Vietnam Pro", "sans-serif";
+}
+/*=============================Login===================================*/
+
+.login {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  width: 500px;
+  padding: 50px;
+  margin-top: 10%;
+}
+
+.login h1 {
+  border-radius: 50px;
+  background: #fbb329;
+  box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.25);
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 30px;
+  font-weight: 500;
+}
+.login-img {
+  width: 100px;
+  max-width: 300px;
+  background-color: red;
+}
+.pro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.pro img {
+  width: 30%;
+}
+.input-field {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.email {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.email input {
+  border: none;
+  border-bottom: 2px solid #fbb329;
+  padding: 10px;
+  padding-left: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.email img {
+  position: absolute;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+}
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.submit input {
+  border: none;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 50px;
+  background: #fbb329;
+  box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.submit input::placeholder {
+  text-align: center;
+}
