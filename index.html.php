@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assest/css/main.css" />
   </head>
   <body>
+    <form method="post">
     <div class="container">
       <div class="row">
         <div class="login">
@@ -15,36 +16,45 @@
           </div>
 
           <div class="pro">
-            <img src="assets/img/Login/3712238-middle 1.png" alt="" />
+            <img src="assest/img/Login/middle.png" alt="" />
 
             <div class="input-field">
               <div class="email">
-                <input
-                  type="email"
-                  placeholder="User"
-                  class="input-email"
-                  id="Username"
-                />
-                <img src="assets/img/Login/person.svg" alt="person" />
+              <input type="text" placeholder="Username" class="input-email" name="username" />
+                <img src="assest/img/Login/person.svg" alt="person" />
               </div>
 
-              <div class="email">
-                <input
-                  type="password"
-                  placeholder="Password"
-                  class="input-Password"
-                  id="Password"
-                />
-                <img src="assets/img/Login/lock.svg" alt="person" />
+              <div class="email">  
+               <input type="password" placeholder="Password"  name="password" />
+                <img src="assest/img/login/lock.svg" alt="person" />
               </div>
 
               <div class="submit">
-                <input type="submit" value="Login" id="BTN"/>
+                <input type="submit" value="Login" name="BTN"/>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </form>
+<?php
+  include("db.php");
+
+  if (isset($_POST["BTN"])) {
+    $uname = $_POST["username"];
+    $password = $_POST["password"];
+
+    $q1 = "SELECT * FROM user WHERE User_Name='$uname' AND password='$password'";
+    $result = mysqli_query($con, $q1);
+    
+    if (mysqli_num_rows($result) === 1) {
+      header("Location: stddashboard.php");
+    } else {
+      echo "<script>alert('Invalid username or password');</script>";
+    }
+  }
+  ?>
+
   </body>
 </html>
